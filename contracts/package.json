@@ -1,0 +1,79 @@
+{
+  "name": "layer_exchange",
+  "version": "1.0.0",
+  "description": "Layer Exchange smart contracts",
+  "repository": "https://github.com/layer-exchange/layer-contracts",
+  "author": "Layer Exchange awesome devs",
+  "license": "GPL-3.0",
+  "keywords": [
+    "layer exchange",
+    "lex",
+    "ethereum",
+    "smart-contracts",
+    "hardhat",
+    "solidity",
+    "stablecoin",
+    "lp"
+  ],
+  "scripts": {
+    "clean": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat clean",
+    "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
+    "coverage": "hardhat coverage",
+    "test": "hardhat test",
+    "lint": "prettier --check \"**/*.{ts,js,sol}\"",
+    "lint:fix": "prettier --write \"**/*.{ts,js,sol}\"",
+    "lint:sol": "solhint 'contracts/**/*.sol' && prettier -c 'contracts/**/*.sol'",
+    "lint:sol:fix": "prettier --write \"contracts/**/*.sol\"",
+    "typechain": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat typechain"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "2.0.2",
+    "@nomiclabs/hardhat-etherscan": "2.1.6",
+    "@nomiclabs/hardhat-waffle": "2.0.1",
+    "@typechain/ethers-v5": "7.0.1",
+    "@typechain/hardhat": "2.2.0",
+    "@types/chai": "4.2.22",
+    "@types/mocha": "9.0.0",
+    "chai": "4.3.4",
+    "cross-env": "7.0.3",
+    "dotenv": "10.0.0",
+    "ethereum-waffle": "3.3.0",
+    "ethers": "5.4.7",
+    "hardhat": "2.8.0",
+    "hardhat-contract-sizer": "2.1.1",
+    "hardhat-deploy": "0.9.3",
+    "husky": "7.0.2",
+    "lint-staged": "11.2.0",
+    "prettier": "2.4.1",
+    "prettier-plugin-solidity": "1.0.0-beta.18",
+    "solhint": "3.3.6",
+    "solhint-plugin-prettier": "0.0.5",
+    "solidity-coverage": "0.7.17",
+    "ts-node": "10.2.1",
+    "typechain": "5.1.2",
+    "typescript": "4.4.3",
+    "web3": "1.6.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "4.0.0",
+    "@uniswap/v2-periphery": "1.1.0-beta.0",
+    "@uniswap/v3-core": "1.0.0",
+    "@uniswap/v3-periphery": "1.2.1",
+    "@uniswap/v3-sdk": "3.5.1",
+    "axios": "^0.25.0",
+    "fast-csv": "^4.3.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "contracts/**/*.sol": [
+      "yarn prettier --check"
+    ],
+    "test/**/*.{ts,js}": [
+      "yarn prettier --check"
+    ]
+  }
+}

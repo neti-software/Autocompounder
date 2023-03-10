@@ -1,0 +1,27 @@
+# Compiled binary
+build/
+
+# Dependency directories
+node_modules/
+
+# Env
+.env
+
+# IDE addons
+.idea/
+.vscode/
+
+# Misc directories
+tmp/
+
+# Solidity Compiled binary
+/artifacts/
+cache/
+coverage/
+types/
+coverage.json
+typechain/
+solcInputs
+.deps/
+mocks/artifacts/
+artifacts/
